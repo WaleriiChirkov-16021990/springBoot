@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+
+<head>
+    <meta charset="UTF-8">
+    <title>all person</title>
+</head>
+<body>
+<a href="/test-batch-update">test-batch-update</a><br>
+<!--<p th:text="${people}"></p>-->
+
+<div th:each="person : ${people}">
+    <a th:text="${person.getName() + ' ' + person.getSurname() + ', ' + person.getAge()}" th:href="@{/people/{id}(id=${person.getId()})}">User</a>
+</div>
+<br>
+<hr>
+<a href="/people/new">Create new person</a>
+
+
+</body>
+</html>
